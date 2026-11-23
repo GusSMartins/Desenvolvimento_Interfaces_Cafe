@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | Silêncio &amp; Grão</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Aba Flutuante de Acessibilidade -->
+  <div class="acessibilidade-wrapper">
+    <button type="button" class="btn-aba-acessibilidade" id="btn-acessibilidade" aria-expanded="false" aria-controls="painel-acessibilidade">
+      Acessibilidade
+    </button>
+    <aside id="painel-acessibilidade" class="painel-acessibilidade" aria-label="Opções de acessibilidade" hidden>
+      <h2>Acessibilidade</h2>
+      <div class="grupo-acessibilidade">
+        <p class="rotulo-acessibilidade">Aparência (WCAG AAA)</p>
+        <button type="button" class="btn-opcao-acess" id="btn-tema">Alternar Modo Escuro</button>
+      </div>
+      <div class="grupo-acessibilidade">
+        <p class="rotulo-acessibilidade">Tamanho da Fonte</p>
+        <div class="botoes-fonte">
+          <button type="button" class="btn-opcao-acess" id="btn-fonte-diminuir" aria-label="Diminuir fonte">A-</button>
+          <button type="button" class="btn-opcao-acess" id="btn-fonte-padrao" aria-label="Fonte padrão">A</button>
+          <button type="button" class="btn-opcao-acess" id="btn-fonte-aumentar" aria-label="Aumentar fonte">A+</button>
+        </div>
+      </div>
+      <div class="grupo-acessibilidade">
+        <p class="rotulo-acessibilidade">Conforto de Leitura</p>
+        <button type="button" class="btn-opcao-acess" id="btn-espacamento">Ampliar Espaçamento</button>
+        <button type="button" class="btn-opcao-acess" id="btn-links">Sublinhar Todos os Links</button>
+      </div>
+      <button type="button" class="btn-reset-acess" id="btn-reset-acess">Restaurar Padrão</button>
+    </aside>
+  </div>
+
+  <header class="cabecalho">
+    <div class="container cabecalho-conteudo">
+      <a href="index.html" class="marca">Silêncio &amp; Grão</a>
+      <button type="button" class="btn-menu-mobile" id="btn-menu" aria-expanded="false" aria-controls="menu-principal">
+        Menu
+      </button>
+      <nav id="menu-principal" class="navegacao" aria-label="Navegação principal">
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="cardapio.html">Cardápio &amp; Espaços</a></li>
+          <li><a href="login.html" aria-current="page">Login</a></li>
+          <li><a href="reservas.html" class="link-destaque">Reservar Cabine</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero-interno">
+      <div class="container">
+        <p class="selo-status">Clube de Foco &amp; Pacotes de Horas</p>
+        <h1>Acesso do Membro</h1>
+        <p class="subtitulo">
+          Entre na sua conta para gerenciar suas reservas recorrentes, consultar seu banco de horas pré-pagas e agilizar seu check-in silencioso.
+        </p>
+      </div>
+    </section>
+
+    <section class="secao-borda">
+      <div class="container login-layout">
+        <div class="card-destaque">
+          <!-- Alternador Entrar / Criar Conta -->
+          <div class="abas-login" role="tablist" aria-label="Modo de acesso">
+            <button type="button" class="aba-btn ativo" id="tab-entrar" role="tab" aria-selected="true">
+              Entrar
+            </button>
+            <button type="button" class="aba-btn" id="tab-cadastrar" role="tab" aria-selected="false">
+              Criar Conta
+            </button>
+          </div>
+
+          <form id="form-login" class="formulario-login">
+            <div class="campo-grupo" id="grupo-nome-cadastro" hidden>
+              <label for="login-nome">Nome completo</label>
+              <input type="text" id="login-nome" name="nome" placeholder="Ex.: Lucas Almeida">
+            </div>
+
+            <div class="campo-grupo">
+              <label for="login-email">E-mail cadastrado</label>
+              <input type="email" id="login-email" name="email" required placeholder="voce@exemplo.com">
+            </div>
+
+            <div class="campo-grupo">
+              <label for="login-senha">Senha</label>
+              <div class="campo-senha-wrapper">
+                <input type="password" id="login-senha" name="senha" required minlength="6" placeholder="Mínimo de 6 caracteres">
+                <button type="button" class="btn-mostrar-senha" id="btn-mostrar-senha" aria-label="Mostrar ou ocultar senha">
+                  Mostrar
+                </button>
+              </div>
+            </div>
+
+            <div class="campo-checkbox">
+              <input type="checkbox" id="lembrar-acesso">
+              <label for="lembrar-acesso">Manter minha sessão conectada neste dispositivo</label>
+            </div>
+
+            <button type="submit" class="btn btn-primario btn-largura-total" id="btn-submit-login">
+              Entrar na Minha Conta
+            </button>
+          </form>
+        </div>
+
+        <!-- Painel de Status da Conta / Benefícios -->
+        <aside id="painel-status-login" class="card" aria-live="polite">
+          <span class="numero-card">Benefícios de Membro</span>
+          <h2>Por que criar uma conta?</h2>
+          <ul class="lista-check" style="margin-top: 1rem;">
+            <li><strong>Check-in expresso:</strong> Basta apresentar seu QR Code ou código na recepção.</li>
+            <li><strong>Banco de horas flexível:</strong> Compre pacotes de 10h ou 20h sem data de validade.</li>
+            <li><strong>Cabine favorita:</strong> Salve sua preferência de assento e restrições alimentares.</li>
+            <li><strong>Histórico de recibos:</strong> Emita comprovantes mensais para reembolso corporativo.</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="container rodape-grid">
+      <div>
+        <p class="marca-rodape">Silêncio &amp; Grão</p>
+        <p>Rua das Acácias, 412 — Bairro Jardins</p>
+        <p>Segunda a Sábado, das 07h30 às 21h00</p>
+      </div>
+      <div>
+        <p class="titulo-rodape">Navegação</p>
+        <ul class="links-rodape">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="cardapio.html">Cardápio &amp; Espaços</a></li>
+          <li><a href="reservas.html">Reservar Cabine</a></li>
+          <li><a href="login.html">Área do Membro (Login)</a></li>
+          <li><a href="404.html">Testar Página 404</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

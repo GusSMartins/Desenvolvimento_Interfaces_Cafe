@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — Página não encontrada | Silêncio &amp; Grão</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Aba Flutuante de Acessibilidade -->
+  <div class="acessibilidade-wrapper">
+    <button type="button" class="btn-aba-acessibilidade" id="btn-acessibilidade" aria-expanded="false" aria-controls="painel-acessibilidade">
+      Acessibilidade
+    </button>
+    <aside id="painel-acessibilidade" class="painel-acessibilidade" aria-label="Opções de acessibilidade" hidden>
+      <h2>Acessibilidade</h2>
+      <div class="grupo-acessibilidade">
+        <p class="rotulo-acessibilidade">Aparência (WCAG AAA)</p>
+        <button type="button" class="btn-opcao-acess" id="btn-tema">Alternar Modo Escuro</button>
+      </div>
+      <div class="grupo-acessibilidade">
+        <p class="rotulo-acessibilidade">Tamanho da Fonte</p>
+        <div class="botoes-fonte">
+          <button type="button" class="btn-opcao-acess" id="btn-fonte-diminuir" aria-label="Diminuir fonte">A-</button>
+          <button type="button" class="btn-opcao-acess" id="btn-fonte-padrao" aria-label="Fonte padrão">A</button>
+          <button type="button" class="btn-opcao-acess" id="btn-fonte-aumentar" aria-label="Aumentar fonte">A+</button>
+        </div>
+      </div>
+      <div class="grupo-acessibilidade">
+        <p class="rotulo-acessibilidade">Conforto de Leitura</p>
+        <button type="button" class="btn-opcao-acess" id="btn-espacamento">Ampliar Espaçamento</button>
+        <button type="button" class="btn-opcao-acess" id="btn-links">Sublinhar Todos os Links</button>
+      </div>
+      <button type="button" class="btn-reset-acess" id="btn-reset-acess">Restaurar Padrão</button>
+    </aside>
+  </div>
+
+  <header class="cabecalho">
+    <div class="container cabecalho-conteudo">
+      <a href="index.html" class="marca">Silêncio &amp; Grão</a>
+      <button type="button" class="btn-menu-mobile" id="btn-menu" aria-expanded="false" aria-controls="menu-principal">
+        Menu
+      </button>
+      <nav id="menu-principal" class="navegacao" aria-label="Navegação principal">
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="cardapio.html">Cardápio &amp; Espaços</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="reservas.html" class="link-destaque">Reservar Cabine</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="pagina-404">
+    <div class="container box-404">
+      <p class="codigo-404" aria-hidden="true">404</p>
+      <p class="selo-status">Silêncio absoluto por aqui</p>
+      <h1>Esta página não foi encontrada.</h1>
+      <p class="subtitulo">
+        Parece que o endereço digitado saiu para tomar um café ou nunca existiu em nosso salão. Que tal retornar para a página inicial ou reservar sua cabine?
+      </p>
+      <div class="grupo-botoes centro">
+        <a href="index.html" class="btn btn-primario">Voltar para o Início</a>
+        <a href="reservas.html" class="btn btn-secundario">Reservar uma Cabine</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="rodape">
+    <div class="container rodape-grid">
+      <div>
+        <p class="marca-rodape">Silêncio &amp; Grão</p>
+        <p>Rua das Acácias, 412 — Bairro Jardins</p>
+        <p>Segunda a Sábado, das 07h30 às 21h00</p>
+      </div>
+      <div>
+        <p class="titulo-rodape">Navegação</p>
+        <ul class="links-rodape">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="cardapio.html">Cardápio &amp; Espaços</a></li>
+          <li><a href="reservas.html">Reservar Cabine</a></li>
+          <li><a href="login.html">Área do Membro (Login)</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

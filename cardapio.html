@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cardápio &amp; Espaços | Silêncio &amp; Grão</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Aba Flutuante de Acessibilidade -->
+  <div class="acessibilidade-wrapper">
+    <button type="button" class="btn-aba-acessibilidade" id="btn-acessibilidade" aria-expanded="false" aria-controls="painel-acessibilidade">
+      Acessibilidade
+    </button>
+    <aside id="painel-acessibilidade" class="painel-acessibilidade" aria-label="Opções de acessibilidade" hidden>
+      <h2>Acessibilidade</h2>
+      <div class="grupo-acessibilidade">
+        <p class="rotulo-acessibilidade">Aparência (WCAG AAA)</p>
+        <button type="button" class="btn-opcao-acess" id="btn-tema">Alternar Modo Escuro</button>
+      </div>
+      <div class="grupo-acessibilidade">
+        <p class="rotulo-acessibilidade">Tamanho da Fonte</p>
+        <div class="botoes-fonte">
+          <button type="button" class="btn-opcao-acess" id="btn-fonte-diminuir" aria-label="Diminuir fonte">A-</button>
+          <button type="button" class="btn-opcao-acess" id="btn-fonte-padrao" aria-label="Fonte padrão">A</button>
+          <button type="button" class="btn-opcao-acess" id="btn-fonte-aumentar" aria-label="Aumentar fonte">A+</button>
+        </div>
+      </div>
+      <div class="grupo-acessibilidade">
+        <p class="rotulo-acessibilidade">Conforto de Leitura</p>
+        <button type="button" class="btn-opcao-acess" id="btn-espacamento">Ampliar Espaçamento</button>
+        <button type="button" class="btn-opcao-acess" id="btn-links">Sublinhar Todos os Links</button>
+      </div>
+      <button type="button" class="btn-reset-acess" id="btn-reset-acess">Restaurar Padrão</button>
+    </aside>
+  </div>
+
+  <header class="cabecalho">
+    <div class="container cabecalho-conteudo">
+      <a href="index.html" class="marca">Silêncio &amp; Grão</a>
+      <button type="button" class="btn-menu-mobile" id="btn-menu" aria-expanded="false" aria-controls="menu-principal">
+        Menu
+      </button>
+      <nav id="menu-principal" class="navegacao" aria-label="Navegação principal">
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="cardapio.html" aria-current="page">Cardápio &amp; Espaços</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="reservas.html" class="link-destaque">Reservar Cabine</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero-interno">
+      <div class="container">
+        <p class="selo-status">Incluso em qualquer plano por hora</p>
+        <h1>Cardápio da Bancada &amp; Estações</h1>
+        <p class="subtitulo">
+          Todos os itens abaixo ficam disponíveis para autosserviço silencioso durante o seu período reservado.
+        </p>
+      </div>
+    </section>
+
+    <!-- Seção Cardápio com Filtro -->
+    <section class="secao-borda">
+      <div class="container">
+        <div class="filtros-grupo" role="group" aria-label="Filtrar itens do cardápio">
+          <button type="button" class="btn-filtro ativo" data-filtro="todos">Todos os Itens</button>
+          <button type="button" class="btn-filtro" data-filtro="cafe">Cafés Especiais</button>
+          <button type="button" class="btn-filtro" data-filtro="cha">Chás &amp; Infusões</button>
+          <button type="button" class="btn-filtro" data-filtro="lanche">Lanches Artesanais</button>
+        </div>
+
+        <div class="grid-3" id="lista-cardapio">
+          <article class="card item-cardapio" data-categoria="cafe">
+            <span class="tag-categoria">Café Especial</span>
+            <h3>Coado da Casa (V60)</h3>
+            <p>Grão 100% Arábica da Serra da Mantiqueira, torra média com notas de chocolate amargo e caramelo.</p>
+          </article>
+
+          <article class="card item-cardapio" data-categoria="cafe">
+            <span class="tag-categoria">Café Especial</span>
+            <h3>Cold Brew 18 Horas</h3>
+            <p>Extração a frio suave e refrescante, baixa acidez e alta concentração natural de cafeína para foco prolongado.</p>
+          </article>
+
+          <article class="card item-cardapio" data-categoria="cha">
+            <span class="tag-categoria">Chás &amp; Infusões</span>
+            <h3>Infusão de Camomila &amp; Capim-Limão</h3>
+            <p>Ervas orgânicas frescas sem cafeína, ideal para sessões de leitura noturna sem comprometer o sono.</p>
+          </article>
+
+          <article class="card item-cardapio" data-categoria="cha">
+            <span class="tag-categoria">Chás &amp; Infusões</span>
+            <h3>Chá Verde Sencha</h3>
+            <p>Rico em L-teanina, proporciona estado de alerta calmo e concentração estável sem picos de agitação.</p>
+          </article>
+
+          <article class="card item-cardapio" data-categoria="lanche">
+            <span class="tag-categoria">Lanches Artesanais</span>
+            <h3>Fatia de Pão Levain &amp; Manteiga</h3>
+            <p>Pão de fermentação natural assado diariamente, acompanhado de manteiga com flor de sal ou geleia artesanal.</p>
+          </article>
+
+          <article class="card item-cardapio" data-categoria="lanche">
+            <span class="tag-categoria">Lanches Artesanais</span>
+            <h3>Bolo de Banana com Aveia (Vegano)</h3>
+            <p>Receita sem açúcar refinado e sem ingredientes de origem animal, preparado para consumo silencioso.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Tipos de Estações -->
+    <section class="secao-borda">
+      <div class="container">
+        <header class="secao-cabecalho">
+          <h2>Nossas Estações de Trabalho</h2>
+          <p>Escolha o formato ideal para o seu estilo de atividade.</p>
+        </header>
+
+        <div class="grid-3">
+          <article class="card">
+            <h3>Mesa de Leitura</h3>
+            <p class="preco-card">R$ 20 / hora</p>
+            <p>Bancada ampla compartilhada em madeira maciça, iluminação direcional individual e apoio ergonômico.</p>
+          </article>
+
+          <article class="card">
+            <h3>Cabine Individual</h3>
+            <p class="preco-card">R$ 25 / hora</p>
+            <p>Divisórias acústicas laterais, cadeira ergonômica ajustável, luminária dedicada e 2 tomadas exclusivas.</p>
+          </article>
+
+          <article class="card">
+            <h3>Cabine Foco Profundo</h3>
+            <p class="preco-card">R$ 32 / hora</p>
+            <p>Espaço semi-fechado no mezanino superior com isolamento acústico reforçado e suporte articulado para notebook.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="container rodape-grid">
+      <div>
+        <p class="marca-rodape">Silêncio &amp; Grão</p>
+        <p>Rua das Acácias, 412 — Bairro Jardins</p>
+        <p>Segunda a Sábado, das 07h30 às 21h00</p>
+      </div>
+      <div>
+        <p class="titulo-rodape">Navegação</p>
+        <ul class="links-rodape">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="cardapio.html">Cardápio &amp; Espaços</a></li>
+          <li><a href="reservas.html">Reservar Cabine</a></li>
+          <li><a href="login.html">Área do Membro (Login)</a></li>
+          <li><a href="404.html">Testar Página 404</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

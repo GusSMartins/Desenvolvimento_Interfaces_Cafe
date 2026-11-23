@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reservar Cabine | Silêncio &amp; Grão</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Aba Flutuante de Acessibilidade -->
+  <div class="acessibilidade-wrapper">
+    <button type="button" class="btn-aba-acessibilidade" id="btn-acessibilidade" aria-expanded="false" aria-controls="painel-acessibilidade">
+      Acessibilidade
+    </button>
+    <aside id="painel-acessibilidade" class="painel-acessibilidade" aria-label="Opções de acessibilidade" hidden>
+      <h2>Acessibilidade</h2>
+      <div class="grupo-acessibilidade">
+        <p class="rotulo-acessibilidade">Aparência (WCAG AAA)</p>
+        <button type="button" class="btn-opcao-acess" id="btn-tema">Alternar Modo Escuro</button>
+      </div>
+      <div class="grupo-acessibilidade">
+        <p class="rotulo-acessibilidade">Tamanho da Fonte</p>
+        <div class="botoes-fonte">
+          <button type="button" class="btn-opcao-acess" id="btn-fonte-diminuir" aria-label="Diminuir fonte">A-</button>
+          <button type="button" class="btn-opcao-acess" id="btn-fonte-padrao" aria-label="Fonte padrão">A</button>
+          <button type="button" class="btn-opcao-acess" id="btn-fonte-aumentar" aria-label="Aumentar fonte">A+</button>
+        </div>
+      </div>
+      <div class="grupo-acessibilidade">
+        <p class="rotulo-acessibilidade">Conforto de Leitura</p>
+        <button type="button" class="btn-opcao-acess" id="btn-espacamento">Ampliar Espaçamento</button>
+        <button type="button" class="btn-opcao-acess" id="btn-links">Sublinhar Todos os Links</button>
+      </div>
+      <button type="button" class="btn-reset-acess" id="btn-reset-acess">Restaurar Padrão</button>
+    </aside>
+  </div>
+
+  <header class="cabecalho">
+    <div class="container cabecalho-conteudo">
+      <a href="index.html" class="marca">Silêncio &amp; Grão</a>
+      <button type="button" class="btn-menu-mobile" id="btn-menu" aria-expanded="false" aria-controls="menu-principal">
+        Menu
+      </button>
+      <nav id="menu-principal" class="navegacao" aria-label="Navegação principal">
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="cardapio.html">Cardápio &amp; Espaços</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="reservas.html" aria-current="page" class="link-destaque">Reservar Cabine</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero-interno">
+      <div class="container">
+        <p class="selo-status">Sem taxa de cancelamento até 2h antes</p>
+        <h1>Reserve sua Estação de Foco</h1>
+        <p class="subtitulo">
+          Preencha os dados abaixo para bloquear sua cabine. O pagamento é realizado apenas no check-in presencial.
+        </p>
+      </div>
+    </section>
+
+    <section class="secao-borda">
+      <div class="container reserva-layout">
+        <form id="form-reserva" class="formulario-reserva">
+          <div class="campo-grupo">
+            <label for="nome">Nome completo</label>
+            <input type="text" id="nome" name="nome" required placeholder="Ex.: Mariana Costa">
+          </div>
+
+          <div class="campo-grupo">
+            <label for="email">E-mail para confirmação</label>
+            <input type="email" id="email" name="email" required placeholder="mariana@exemplo.com">
+          </div>
+
+          <div class="grid-2">
+            <div class="campo-grupo">
+              <label for="data">Data da visita</label>
+              <input type="date" id="data" name="data" required>
+            </div>
+
+            <div class="campo-grupo">
+              <label for="horario">Horário de entrada</label>
+              <select id="horario" name="horario" required>
+                <option value="08:00">08:00 (Manhã Silenciosa)</option>
+                <option value="10:00">10:00 (Meio da Manhã)</option>
+                <option value="14:00">14:00 (Tarde de Foco)</option>
+                <option value="17:00">17:00 (Fim de Tarde / Estudo)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="grid-2">
+            <div class="campo-grupo">
+              <label for="estacao-reserva">Estação desejada</label>
+              <select id="estacao-reserva" name="estacao" required>
+                <option value="Cabine Individual" data-preco="25">Cabine Individual (R$ 25/h)</option>
+                <option value="Mesa de Leitura" data-preco="20">Mesa de Leitura (R$ 20/h)</option>
+                <option value="Cabine Foco Profundo" data-preco="32">Cabine Foco Profundo (R$ 32/h)</option>
+              </select>
+            </div>
+
+            <div class="campo-grupo">
+              <label for="duracao-reserva">Duração (horas)</label>
+              <input type="number" id="duracao-reserva" name="duracao" min="1" max="8" value="2" required>
+            </div>
+          </div>
+
+          <div class="campo-checkbox">
+            <input type="checkbox" id="aceite-silencio" required>
+            <label for="aceite-silencio">
+              Concordo com a política de silêncio absoluto (zero chamadas de voz e uso obrigatório de fones).
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn-primario btn-largura-total">Confirmar Reserva</button>
+        </form>
+
+        <aside id="comprovante-reserva" class="card-destaque" aria-live="polite">
+          <h2>Resumo do Agendamento</h2>
+          <p>Preencha o formulário ao lado para gerar seu código de entrada na recepção.</p>
+          <hr class="divisor">
+          <p><strong>Política de Atraso:</strong> Guardamos sua cabine por até 20 minutos após o horário agendado.</p>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="container rodape-grid">
+      <div>
+        <p class="marca-rodape">Silêncio &amp; Grão</p>
+        <p>Rua das Acácias, 412 — Bairro Jardins</p>
+        <p>Segunda a Sábado, das 07h30 às 21h00</p>
+      </div>
+      <div>
+        <p class="titulo-rodape">Navegação</p>
+        <ul class="links-rodape">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="cardapio.html">Cardápio &amp; Espaços</a></li>
+          <li><a href="reservas.html">Reservar Cabine</a></li>
+          <li><a href="login.html">Área do Membro (Login)</a></li>
+          <li><a href="404.html">Testar Página 404</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
