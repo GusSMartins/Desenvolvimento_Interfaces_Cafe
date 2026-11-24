@@ -66,10 +66,11 @@
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-texto">
-          <p class="selo-status" role="status">
-            ● 6 de 18 cabines livres neste momento
+          <p class="selo-status selo-ao-vivo" role="status">
+            <span class="bolinha-pulso" aria-hidden="true"></span>
+            6 de 18 cabines livres neste momento
           </p>
-          <h1>Um refúgio de silêncio absoluto e café especial para trabalho profundo.</h1>
+          <h1>Um refúgio de <span class="destaque-titulo">silêncio absoluto</span> e café especial para trabalho profundo.</h1>
           <p class="subtitulo">
             Pague apenas pelo tempo de permanência. Desfrute de cafés filtrados, chás e lanches à vontade sob uma regra inegociável: <strong>zero ligações, zero reuniões, foco total.</strong>
           </p>
@@ -79,9 +80,10 @@
           </div>
         </div>
 
-        <aside class="card-destaque" aria-label="Resumo da tarifa">
-          <h2>Passe por Hora</h2>
-          <p class="preco-grande">R$ 25<span>/hora</span></p>
+        <aside class="card-destaque card-passe" aria-label="Resumo da tarifa">
+            <p class="etiqueta-card"><span aria-hidden="true">★</span> Passe Diário Flexível</p>
+            <h2>Passe por Hora</h2>
+            <p class="preco-grande">R$ 25<span>/hora</span></p>
           <ul class="lista-check">
             <li>Cafés especiais e chás ilimitados</li>
             <li>Pães de fermentação natural e bolos</li>
@@ -210,27 +212,56 @@
         <header class="secao-cabecalho">
           <h2>Como funciona o espaço</h2>
           <p>Três pilares simples para garantir a tranquilidade de todos os frequentadores.</p>
-        </header>
-
-        <div class="grid-3">
-          <article class="card">
-            <span class="numero-card">01</span>
-            <h3>Regra Zero Calls</h3>
-            <p>Celulares em modo silencioso e fones de ouvido obrigatórios para qualquer mídia. Chamadas de voz ou vídeo são proibidas no salão.</p>
-          </article>
-
-          <article class="card">
-            <span class="numero-card">02</span>
-            <h3>Consumo Livre Incluso</h3>
-            <p>Enquanto sua sessão estiver ativa, sirva-se livremente na bancada de cafés especiais coados na hora, infusões e lanches artesanais.</p>
-          </article>
-
-          <article class="card">
-            <span class="numero-card">03</span>
-            <h3>Check-in por Tempo</h3>
-            <p>Você escolhe quantas horas deseja ficar. A partir de 4 horas contínuas, aplicamos automaticamente 15% de desconto no valor total.</p>
-          </article>
-        </div>
+          </header>
+          <div class="grid-3">
+            <article class="card">
+              <div class="pilar-topo">
+                <span class="numero-circulo">01</span>
+                <!-- Ícone: fone de ouvido -->
+                <svg class="icone-pilar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                  <path d="M4 15v-3a8 8 0 0 1 16 0v3" />
+                  <rect x="3" y="14" width="4" height="6" rx="1.5" />
+                  <rect x="17" y="14" width="4" height="6" rx="1.5" />
+                </svg>
+              </div>
+              <h3>Regra Zero Calls</h3>
+              <p>Celulares em modo silencioso e fones de ouvido obrigatórios para qualquer mídia. Chamadas de voz ou vídeo são
+                proibidas no salão.</p>
+            </article>
+          
+            <article class="card">
+              <div class="pilar-topo">
+                <span class="numero-circulo">02</span>
+                <!-- Ícone: xícara de café -->
+                <svg class="icone-pilar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                  <path d="M4 10h12v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z" />
+                  <path d="M16 12h1.5a2.5 2.5 0 0 1 0 5H16" />
+                  <path d="M8 3.5c-.7 1 .7 2 0 3.5" />
+                  <path d="M12 3.5c-.7 1 .7 2 0 3.5" />
+                </svg>
+              </div>
+              <h3>Consumo Livre Incluso</h3>
+              <p>Enquanto sua sessão estiver ativa, sirva-se livremente na bancada de cafés especiais coados na hora, infusões e
+                lanches artesanais.</p>
+            </article>
+          
+            <article class="card">
+              <div class="pilar-topo">
+                <span class="numero-circulo">03</span>
+                <!-- Ícone: relógio -->
+                <svg class="icone-pilar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="M12 7v5l3 2" />
+                </svg>
+              </div>
+              <h3>Check-in por Tempo</h3>
+              <p>Você escolhe quantas horas deseja ficar. A partir de 4 horas contínuas, aplicamos automaticamente 15% de desconto
+                no valor total.</p>
+            </article>
+          </div>
       </div>
     </section>
 

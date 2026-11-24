@@ -3,6 +3,8 @@
     --cor-fundo: #F7F5F0;
     --cor-texto: #261C16;
     --cor-destaque: #2F4A3E;
+    --cor-ambar: #8C4A19;
+    --cor-ao-vivo: #1E7E34;
     --escala-fonte: 100%;
   }
   
@@ -14,6 +16,8 @@
     --cor-fundo: #261C16;
     --cor-texto: #F7F5F0;
     --cor-destaque: #A5CBB9;
+    --cor-ambar: #E0A370;
+      --cor-ao-vivo: #4CC16A;
   }
   
   * {
@@ -244,6 +248,49 @@
     margin-bottom: 1rem;
   }
   
+  .selo-ao-vivo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.bolinha-pulso {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--cor-ao-vivo);
+  flex-shrink: 0;
+}
+
+/* Anel que se expande e some, criando o efeito de pulso */
+.bolinha-pulso::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background-color: inherit;
+  animation: pulso-ao-vivo 1.8s ease-out infinite;
+}
+
+@keyframes pulso-ao-vivo {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(2.6);
+    opacity: 0;
+  }
+}
+
+/* Acessibilidade: desliga a animação para quem pediu menos movimento no sistema */
+@media (prefers-reduced-motion: reduce) {
+  .bolinha-pulso::after {
+    animation: none;
+  }
+}
+
   .grupo-botoes {
     display: flex;
     flex-wrap: wrap;
@@ -317,6 +364,10 @@
     margin-bottom: 1.1rem;
     letter-spacing: -0.02em;
   }
+
+  .destaque-titulo {
+  color: var(--cor-ambar);
+}
   
   h2 {
     font-size: 1.85rem;
@@ -435,6 +486,37 @@
     color: var(--cor-destaque);
     margin-bottom: 0.6rem;
   }
+
+  /* Pilares "Como funciona": número em círculo + ícone */
+.pilar-topo {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.numero-circulo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  background-color: var(--cor-destaque);
+  color: var(--cor-fundo);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  flex-shrink: 0;
+}
+
+.icone-pilar {
+  width: 2rem;
+  height: 2rem;
+  color: var(--cor-destaque);
+  flex-shrink: 0;
+}
   
   .card-destaque {
     border: 2px solid var(--cor-texto);
@@ -455,6 +537,32 @@
     color: var(--cor-texto);
     font-weight: 400;
   }
+
+  /* Card "Passe por Hora" com etiqueta no topo */
+.card-passe {
+  position: relative;
+  margin-top: 1rem; /* espaço para a etiqueta que sobe acima da borda */
+}
+
+.etiqueta-card {
+  position: absolute;
+  top: 0;
+  left: 2rem;
+  transform: translateY(-50%); /* centraliza a etiqueta sobre a borda superior */
+  background-color: var(--cor-destaque);
+  color: var(--cor-fundo);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+}
+
+.card-passe .preco-grande {
+  color: var(--cor-ambar);
+}
   
   .preco-card {
     font-weight: 700;
@@ -516,9 +624,22 @@
   }
   
   .nota-desconto {
-    font-size: 0.9rem;
-    margin-bottom: 1.25rem;
-  }
+  font-size: 0.9rem;
+  margin-bottom: 1.25rem;
+  padding: 0.6rem 0.85rem;
+  border: 1.5px dashed var(--cor-texto);
+  border-radius: 4px;
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+/* Estado ativado pelo JavaScript quando horas >= 4 */
+.nota-desconto.desconto-ativo {
+  background-color: #2F4A3E;
+  color: #F7F5F0;
+  border: 1.5px solid var(--cor-destaque);
+  font-weight: 700;
+}
+
   
   /* ==========================================================================
      FILTROS, FORMULÁRIOS E PÁGINA DE LOGIN

@@ -187,9 +187,11 @@ document.addEventListener("DOMContentLoaded", () => {
   
       if (horas >= 4) {
         total = total * 0.85;
-        notaDesconto.textContent = "Desconto de 15% aplicado automaticamente (sessão longa).";
+        notaDesconto.textContent = "✓ Desconto de 15% ativado nesta simulação!";
+        notaDesconto.classList.add("desconto-ativo");
       } else {
         notaDesconto.textContent = "Dica: reserve 4h ou mais para ganhar 15% de desconto.";
+        notaDesconto.classList.remove("desconto-ativo");
       }
   
       valorTotal.textContent = total.toLocaleString("pt-BR", {
