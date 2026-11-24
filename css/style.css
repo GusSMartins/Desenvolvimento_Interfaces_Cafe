@@ -1,14 +1,3 @@
-/* ==========================================================================
-   SISTEMA CROMÁTICO ESTRITO (3 CORES - REGRA 60-30-10 - WCAG AAA)
-   Modo Claro:
-     60% Dominante: #F7F5F0 (Creme Pergaminho)
-     30% Secundária: #261C16 (Espresso Profundo)   -> Contraste 15.30:1
-     10% Destaque:  #2F4A3E (Verde Botânico)      -> Contraste 8.88:1
-   Modo Escuro (Invertido WCAG AAA):
-     60% Dominante: #261C16 (Espresso Profundo)
-     30% Secundária: #F7F5F0 (Creme Pergaminho)   -> Contraste 15.30:1
-     10% Destaque:  #A5CBB9 (Sálvia Claro)        -> Contraste 9.40:1
-   ========================================================================== */
 
    :root {
     --cor-fundo: #F7F5F0;
@@ -181,14 +170,24 @@
     padding-bottom: 1.1rem;
   }
   
-  .marca {
-    font-family: "Georgia", serif;
-    font-size: 1.45rem;
-    font-weight: 700;
-    color: var(--cor-texto);
-    text-decoration: none;
-    letter-spacing: -0.02em;
-  }
+.marca {
+  font-family: "Georgia", serif;
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--cor-texto);
+  text-decoration: none;
+  letter-spacing: -0.02em;
+  display: flex;          
+  align-items: center;    
+  gap: 0.65rem;           
+}
+
+.marca-logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  flex-shrink: 0;         
+}
   
   .navegacao ul {
     list-style: none;
