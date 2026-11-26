@@ -6,13 +6,13 @@ Plataforma web responsiva e acessível desenvolvida para a **Silêncio & Grão**
 
 ```text
 Desenvolvimento_Interfaces_Cafe/
-├── index.html      # Página inicial: status ao vivo, carrossel, pilares e simulador de estadia
-├── cardapio.html   # Cardápio filtrável por categoria e modalidades de estações
+├── index.html      # Página inicial: status ao vivo, carrossel de ambientes, pilares e simulador de estadia
+├── cardapio.html   # Cardápio com fotos, filtrável por categoria, e modalidades de estações
 ├── reservas.html   # Formulário validado com emissão instantânea de comprovante
 ├── login.html      # Área do membro com alternância Entrar / Criar Conta
 ├── 404.html        # Página de erro personalizada para rotas inválidas
 ├── css/
-│   └── style.css   # Estilos globais, temas, animações e responsividade (WCAG AAA)
+│   └── style.css   # Estilos globais, temas, animações, efeitos de hover e responsividade (WCAG AAA)
 ├── img/
 │   ├── logo.png                    # Logotipo da marca, usado também como favicon
 │   ├── cabine-individual.webp      # Fotos dos ambientes (carrossel da página inicial)
@@ -40,23 +40,27 @@ Desenvolvimento_Interfaces_Cafe/
 2. **Estruturação Semântica (`HTML5`):**
    - Criação das cinco páginas compartilhando painel de acessibilidade, `<header>` fixo com logotipo e `<footer>` invertido.
    - Identidade visual com favicon (`<link rel="icon">` e `apple-touch-icon`) e logotipo ao lado do nome da marca, marcado como decorativo (`alt=""`) para não duplicar a leitura do link.
-   - Emprego de tags semânticas (`<main>`, `<section>`, `<article>`, `<aside>`, `<figure>`), rótulos explícitos (`<label>`) em formulários e atributos `data-*` para filtragem dinâmica.
-   - Fotografias otimizadas em `WebP` (1200 px) no carrossel de ambientes e nos cards do cardápio, com textos alternativos descritivos, dimensões declaradas (`width`/`height`) contra saltos de layout e `loading="lazy"` no cardápio.
+   - Emprego de tags semânticas (`<main>`, `<section>`, `<article>`, `<aside>`, `<figure>`/`<figcaption>`), rótulos explícitos (`<label>`) em formulários e atributos `data-*` para filtragem dinâmica.
+   - Fotografias otimizadas em `WebP` (1200 px, de 66 a 134 KB cada) no carrossel de ambientes e nos cards do cardápio, com textos alternativos descritivos, dimensões declaradas (`width`/`height`) contra saltos de layout e `loading="lazy"` no cardápio.
    - Ícones vetoriais SVG inline (fone, xícara e relógio) com `stroke="currentColor"` para herdar o tema, marcados como decorativos (`aria-hidden="true"`).
    - Regiões `aria-live` e `role="status"` para anunciar atualizações (status de cabines, simulador, login e comprovante de reserva) a leitores de tela.
 
 3. **Estilização e Responsividade (`css/style.css`):**
    - Centralização das cores em variáveis CSS (`:root`), redefinidas em `html[data-tema="escuro"]` para o modo escuro.
    - Construção de layouts com `CSS Grid` e `Flexbox`, tipografia híbrida (serifada para leitura e sem serifa para controles) e contornos `:focus-visible` para acessibilidade via teclado.
+   - Fotos do carrossel padronizadas em `16:9` e fotos do cardápio em `3:2` com `object-fit: cover`, ocupando o topo dos cards de borda a borda.
    - Card "Passe por Hora" com etiqueta em pílula (`★ Passe Diário Flexível`) posicionada sobre a borda superior e preço em Âmbar Torrado.
    - Pilares "Como funciona" com numeração em círculos preenchidos e ícones, dimensionados em `rem` para acompanhar o ajuste de fonte.
-   - Indicador de status ao vivo com animação `@keyframes` de pulso, desativada automaticamente via `prefers-reduced-motion` (WCAG 2.3.3).
+   - Efeito de hover nos cards das grades (pilares, cardápio e estações) com `transform: scale()`, sombra e borda em destaque, restrito a dispositivos com mouse via `@media (hover: hover)`.
+   - Abas de login (Entrar / Criar Conta) com transição de cor no hover e no foco por teclado: tom suave gerado com `color-mix()` na aba inativa e escurecimento na aba ativa, seguindo o padrão dos botões primários.
+   - Indicador de status ao vivo com animação `@keyframes` de pulso.
+   - Respeito à preferência `prefers-reduced-motion` (WCAG 2.3.3): o pulso do indicador e o crescimento dos cards são desativados para quem pediu menos movimento no sistema.
    - Adaptação para dispositivos móveis (`@media (max-width: 820px)`) com colunas em pilha única e menu retrátil.
 
 4. **Interatividade (`js/script.js`):**
    - **Painel de Acessibilidade:** Alterna modo escuro, tamanho da fonte (85% a 130%), espaçamento ampliado e sublinhado de links, salvando as preferências no `localStorage`.
    - **Menu Mobile:** Alterna a exibição da navegação e atualiza `aria-expanded`.
-   - **Carrossel de Ambientes:** Navegação por botões e indicadores entre as ilustrações dos espaços, atualizando `aria-selected`.
+   - **Carrossel de Ambientes:** Navegação por botões e indicadores entre as fotos dos espaços (cabines, bancada e mezanino), atualizando `aria-selected`.
    - **Simulador de Permanência:** Calcula o valor total conforme horas e estação escolhidas, aplicando 15% de desconto automático a partir de 4 horas. Ao atingir o desconto, o JavaScript adiciona a classe `desconto-ativo`, que destaca o aviso em Verde Botânico com a mensagem de confirmação.
    - **Filtro de Cardápio:** Filtra os cards entre *Todos*, *Cafés*, *Chás* e *Lanches* sem recarregar a página.
    - **Login e Cadastro:** Alterna entre os modos Entrar e Criar Conta, permite mostrar/ocultar a senha e exibe um painel simulado de sessão autenticada.
@@ -65,6 +69,6 @@ Desenvolvimento_Interfaces_Cafe/
 ## Como Executar
 
 1. Mantenha a estrutura de pastas (`css/`, `img/` e `js/` na raiz do projeto).
-2. Abra o arquivo `index.html` diretamente no navegador ou via extensão **Live Server** no VS Code.
+2. Abra o arquivo `index.html` diretamente no navegador ou via extensão **Live Server** no VS Code, que foi utilizada para verificar resultado de prototipos antes de envialos ao github atraves de commits.
 3. Utilize o link **"Testar Página 404"** no rodapé para visualizar a página de erro personalizada.
-4. Se o favicon não aparecer, recarregue com **Ctrl + F5** para limpar o cache do navegador.
+4. Se o favicon ou as imagens não atualizarem, recarregue com **Ctrl + F5** para limpar o cache do navegador.
