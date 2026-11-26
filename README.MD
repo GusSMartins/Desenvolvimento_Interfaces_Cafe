@@ -14,7 +14,16 @@ Desenvolvimento_Interfaces_Cafe/
 ├── css/
 │   └── style.css   # Estilos globais, temas, animações e responsividade (WCAG AAA)
 ├── img/
-│   └── logo.png    # Logotipo da marca, usado também como favicon
+│   ├── logo.png                    # Logotipo da marca, usado também como favicon
+│   ├── cabine-individual.webp      # Fotos dos ambientes (carrossel da página inicial)
+│   ├── bancada-autosservico.webp
+│   ├── mezanino-biblioteca.webp
+│   ├── cafe-coado-v60.webp         # Fotos dos itens do cardápio
+│   ├── cold-brew.webp
+│   ├── infusao-camomila.webp
+│   ├── cha-verde-sencha.webp
+│   ├── pao-levain.webp
+│   └── bolo-banana-aveia.webp
 ├── js/
 │   └── script.js   # Acessibilidade, menu mobile, carrossel, simulador, filtros, login e reservas
 └── README.MD       # Documentação do projeto
@@ -32,6 +41,7 @@ Desenvolvimento_Interfaces_Cafe/
    - Criação das cinco páginas compartilhando painel de acessibilidade, `<header>` fixo com logotipo e `<footer>` invertido.
    - Identidade visual com favicon (`<link rel="icon">` e `apple-touch-icon`) e logotipo ao lado do nome da marca, marcado como decorativo (`alt=""`) para não duplicar a leitura do link.
    - Emprego de tags semânticas (`<main>`, `<section>`, `<article>`, `<aside>`, `<figure>`), rótulos explícitos (`<label>`) em formulários e atributos `data-*` para filtragem dinâmica.
+   - Fotografias otimizadas em `WebP` (1200 px) no carrossel de ambientes e nos cards do cardápio, com textos alternativos descritivos, dimensões declaradas (`width`/`height`) contra saltos de layout e `loading="lazy"` no cardápio.
    - Ícones vetoriais SVG inline (fone, xícara e relógio) com `stroke="currentColor"` para herdar o tema, marcados como decorativos (`aria-hidden="true"`).
    - Regiões `aria-live` e `role="status"` para anunciar atualizações (status de cabines, simulador, login e comprovante de reserva) a leitores de tela.
 

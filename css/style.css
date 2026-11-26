@@ -427,10 +427,11 @@
     display: block;
   }
   
-  .ilustracao-ambiente {
+  .foto-ambiente {
     width: 100%;
     height: auto;
-    max-height: 320px;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
     border: 1.5px solid var(--cor-texto);
     border-radius: 4px;
     display: block;
@@ -494,6 +495,22 @@
   html[data-tema="escuro"] .grid-3 .card:hover {
     box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45);
   }
+}
+
+/* Foto ocupando o topo do card do cardápio, de borda a borda */
+.item-cardapio {
+  overflow: hidden;
+}
+
+.foto-cardapio {
+  display: block;
+  width: calc(100% + 3.5rem);
+  max-width: none;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  margin: -1.75rem -1.75rem 1.25rem;
+  border-bottom: 1.5px solid var(--cor-texto);
 }
   
   .numero-card, .tag-categoria {
