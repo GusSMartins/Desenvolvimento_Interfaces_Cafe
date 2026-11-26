@@ -703,18 +703,32 @@
   }
   
   .aba-btn {
-    background-color: var(--cor-fundo);
-    color: var(--cor-texto);
-    border: none;
-    padding: 0.75rem;
-    font-weight: 700;
-    cursor: pointer;
-  }
-  
-  .aba-btn.ativo {
-    background-color: var(--cor-destaque);
-    color: var(--cor-fundo);
-  }
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  border: none;
+  padding: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease; /* novo: troca de cor suave */
+}
+
+.aba-btn.ativo {
+  background-color: var(--cor-destaque);
+  color: var(--cor-fundo);
+}
+
+/* Hover na aba NÃO selecionada: tom verde suave */
+.aba-btn:not(.ativo):hover,
+.aba-btn:not(.ativo):focus-visible {
+  background-color: color-mix(in srgb, var(--cor-destaque) 15%, var(--cor-fundo));
+  color: var(--cor-destaque);
+}
+
+/* Hover na aba selecionada: escurece, igual aos botões primários do site */
+.aba-btn.ativo:hover {
+  background-color: var(--cor-texto);
+  color: var(--cor-fundo);
+}
   
   .campo-grupo {
     display: flex;
